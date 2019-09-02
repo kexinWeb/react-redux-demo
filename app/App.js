@@ -1,21 +1,26 @@
-import { connect } from 'react-redux';
-import MyComponent from './myComponent';
+import { connect } from 'react-redux'
+import MyComponent from './myComponent'
+import { changeInput, add, substract, toZero } from './action'
 
 // Map Redux state to component props
 function mapStateToProps(state) {
+  console.log('state', state)
   return {
-    text: state.text,
-    name: state.name
-  };
+    info: state.info,
+    count: state.count
+    // text: state.text,
+    // name: state.name,
+    // count: state.count,
+  }
 }
 
 // Map Redux actions to component props
 function mapDispatchToProps(dispatch) {
   return {
-    onChange: (e) => dispatch({
-      type: 'change',
-      payload: e.target.value
-    })
+    onChange: (e) => dispatch(changeInput(e.target.value)),
+    add: () => dispatch(add()),
+    substract: () => dispatch(substract()),
+    toZero: () => dispatch(toZero())
   }
 }
 
@@ -23,6 +28,6 @@ function mapDispatchToProps(dispatch) {
 const App = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MyComponent);
+)(MyComponent)
 
-export default App;
+export default App
