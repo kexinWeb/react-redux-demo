@@ -1,4 +1,4 @@
-import { CHANGE, ADD, SUBSTRACT, TOZERO } from './actionType'
+import { CHANGE, ADD, SUBSTRACT, TOZERO, INCREMENTASYNC } from './actionType'
 
 // action: { type, payload }
 export function changeInput(payload) {
@@ -23,5 +23,11 @@ export function substract() {
 export function toZero() {
     return {
         type: TOZERO
+    }
+}
+
+export function incrementAsync() {
+    return {
+        type: INCREMENTASYNC
     }
 }

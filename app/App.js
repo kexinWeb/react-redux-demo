@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import MyComponent from './myComponent'
-import { changeInput, add, substract, toZero } from './action'
+import { changeInput, add, substract, toZero, incrementAsync } from './action'
 
 // Map Redux state to component props
 function mapStateToProps(state) {
@@ -20,7 +20,8 @@ function mapDispatchToProps(dispatch) {
     onChange: (e) => dispatch(changeInput(e.target.value)),
     add: () => dispatch(add()),
     substract: () => dispatch(substract()),
-    toZero: () => dispatch(toZero())
+    toZero: () => dispatch(toZero()),
+    incrementAsync: () => dispatch(incrementAsync())
   }
 }
 

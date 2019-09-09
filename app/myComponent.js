@@ -11,6 +11,7 @@ class MyComponent extends React.Component {
                 <button onClick={this.props.add}>加1</button>
                 <button onClick={this.props.substract}>减1</button>
                 <button onClick={this.props.toZero}>置0</button>
+                <button onClick={this.props.incrementAsync}>1秒后加1</button>
             </div>
         )
     }
